@@ -1,9 +1,11 @@
-### DataCenter Architecture
+### DataCenter Architecture:
+
+![Datacenter](/img/DataCenter.png)
 ```text
                                    ┌─────────────────────────────────────────────────────┐
                                    │                 DELL POWERMAX STORAGE               │
                                    │  [FA Director A Ports]        [FA Director B Ports] │
-                                   └─────────────── ┬───────────────────────┬────────────┘
+                                   └────────────────┬───────────────────────┬────────────┘
                                                     │                       │
                           (Fiber Channel/FC Links)  │                       │ (Fiber Channel/FC Links)
                                                     │                       │
@@ -38,7 +40,8 @@
        │   │  |  Blades:  |                                │     │  |  Blades:  |                                │ │ 
        │   │  |  B1 B2 B3 |  (Mezz NICs to FC/Eth fabrics) │     │  |  B1 B2 B3 |  (Mezz NICs to FC/Eth fabrics) │ │ 
        │   │  |  B4 B5 B6 |  (Each blade has ESXi running) │     │  |  B4 B5 B6 |  (Each blade has ESXi running) │ │ 
-       │   │  |  B7 B8    |                                │     │  |  B7 B8    |                                │ │ 
+       │   │  |  B7 B8    |                                │     │  |  B7 B8    |                                │ │
+       │   │  +-----------+                                │     │  +-----------+                                │ │
        │   └───────────────────────────────────────────────┘     └───────────────────────────────────────────────┘ │ 
        │                                                                                                           │ 
        │   ┌───────────────────────────────────────────────┐     ┌───────────────────────────────────────────────┐ │ 
@@ -51,7 +54,8 @@
        │   │  |  Blades:  |                                │     │  |  Blades:  |                                │ │ 
        │   │  |  B1 B2 B3 |  (Mezz NICs to FC/Eth fabrics) │     │  |  B1 B2 B3 |  (Mezz NICs to FC/Eth fabrics) │ │ 
        │   │  |  B4 B5 B6 |  (Each blade has ESXi running) │     │  |  B4 B5 B6 |  (Each blade has ESXi running) │ │ 
-       │   │  |  B7 B8    |                                │     │  |  B7 B8    |                                │ │ 
+       │   │  |  B7 B8    |                                │     │  |  B7 B8    |                                │ │
+       │   │  +-----------+                                │     │  +-----------+                                │ │
        │   └───────────────────────────────────────────────┘     └───────────────────────────────────────────────┘ │
        └───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 
