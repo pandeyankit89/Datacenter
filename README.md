@@ -10,7 +10,9 @@
 - Each chassis has dual IOMs – one for Fibre Channel (SAN-Fabric) and one for Ethernet (LAN-Fabric).
 - FI provides both SAN uplinks (to SAN fabric) and LAN uplinks (to data/management networks).
 - Blades see both SAN and LAN fabrics for redundancy.
-
+- A UCS domain **can support multiple chassis**, _depending on the Fabric Interconnects (FIs) and the UCS model_. **Cisco UCS 6200 Series Fabric Interconnects** can support up to **20 chassis per FI pair.**
+- A chassis **cannot have** more blades than its **slot capacity**. Most UCS chassis have **8 slots max**.
+---
 #### Real Example Flow (if you ask for a 40GB on vm1 and 200GB on vm2 as E: drive)
 - (1) **Storage Admin** creates a **500 GB LUN** (raw storage) on **PowerMax**.  
 - (2) **SAN Team** performs **zoning**, making that LUN visible to the **ESXi hosts (on UCS)**.  
@@ -18,7 +20,7 @@
 - (4) **VMware Admin**, in **vSphere Client**, allocates  new 40 GB and 200GB **VMDK** files on the datastore. This **VMDK** is attached to the VM as a **virtual disk**.  
 - (5) **Windows Admin** opens **Disk Management** in the VM1 and VM2, sees the **unallocated space**, initializes it, formats it, and assigns it the drive letter **E:**.  
 ```text
-						[Storage Array]
+						    [Storage Array]
 						+-----------------------------+
 						| Array: PowerMax / Unity...  |
 						| LUN ID: 500                 |
